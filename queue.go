@@ -1,4 +1,4 @@
-package queue
+package iq
 
 // Queue is the priority queue based on insertion sort
 type Queue[T Item[T]] []T

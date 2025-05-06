@@ -1,4 +1,4 @@
-package queue
+package iq
 
 import (
 	"math/rand"

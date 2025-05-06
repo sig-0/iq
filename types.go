@@ -1,4 +1,4 @@
-package queue
+package iq
 
 // Item represents a single queue item
 type Item[T any] interface {
