@@ -1,8 +1,8 @@
 ## Overview
 
-[![codecov](https://codecov.io/gh/madz-lab/insertion-queue/branch/main/graph/badge.svg?token=UJW1HMBFUM)](https://codecov.io/gh/sig-0/insertion-queue)
+[![codecov](https://codecov.io/gh/sig-0/iq/branch/main/graph/badge.svg?token=UJW1HMBFUM)](https://codecov.io/gh/sig-0/iq)
 
-`insertion-queue` is a small library that implements a priority queue in slice representation, where the order of items
+`iq` is a small library that implements a priority queue in slice representation, where the order of items
 is sorted using insertion sort.
 
 ## Usage
@@ -12,7 +12,7 @@ is sorted using insertion sort.
 To start using it, fetch it using `go get`:
 
 ```bash
-go get github.com/sig-0/insertion-queue
+go get github.com/sig-0/iq
 ```
 
 ### Basic operations
@@ -26,7 +26,7 @@ package main
 import (
 	"fmt"
 
-	iq "github.com/madz-lab/insertion-queue"
+	"github.com/sig-0/iq"
 )
 
 // number is a wrapper for a queue number value
@@ -72,7 +72,7 @@ within their own structure, and define an insertion method that:
 
 It turns out this is not really efficient, especially if the use-case of the queue
 is that items will be added sequentially (one-by-one). Insertion sort provides the biggest performance
-benefits in data sets that are _nearly_ sorted. Given that each element being added to the `insertion-queue` is
+benefits in data sets that are _nearly_ sorted. Given that each element being added to the `iq` is
 automatically sorted on insertion, the benefit is obvious - the overhead for placing the new element is minimal.
 
 Additionally, this package is for users who want to have control over their input set (slice), by being able to directly
@@ -89,20 +89,20 @@ This package outperforms the standard library implementation mentioned in the bu
 Items: 100
 Iterations: 100
 Name             Time [s]
-insertion-queue  0.00052
+iq  0.00052
 stdlib           0.00189
 
-insertion-queue is faster by 0.00137s
+iq is faster by 0.00137s
 
 ==================
 
 Items: 1000
 Iterations: 100
 Name             Time [s]
-insertion-queue  0.03490
+iq  0.03490
 stdlib           0.17314
 
-insertion-queue is faster by 0.13824s
+iq is faster by 0.13824s
 ```
 
 The snippet for this performance test can be
@@ -113,7 +113,7 @@ found [here](https://gist.github.com/zivkovicmilos/ce12d68304e0aa7502f8f71733418
 ```bash
 goos: darwin
 goarch: arm64
-pkg: github.com/sig-0/insertion-queue
+pkg: github.com/sig-0/iq
 cpu: Apple M3 Max
 BenchmarkHeap_Push10-14                  7005292               168.4 ns/op           248 B/op          5 allocs/op
 BenchmarkHeap_Push100-14                  201814              5934 ns/op            2168 B/op          8 allocs/op
