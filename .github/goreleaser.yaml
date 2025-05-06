@@ -1,0 +1,16 @@
+project_name: iq
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - skip: true
+
+changelog:
+  sort: asc
+
+release:
+  draft: true
+  replace_existing_draft: true
+  prerelease: true
